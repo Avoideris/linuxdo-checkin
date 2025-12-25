@@ -55,6 +55,7 @@ GOTIFY_URL = os.environ.get("GOTIFY_URL")  # Gotify 服务器地址
 GOTIFY_TOKEN = os.environ.get("GOTIFY_TOKEN")  # Gotify 应用的 API Token
 SC3_PUSH_KEY = os.environ.get("SC3_PUSH_KEY")  # Server酱³ SendKey
 PUSHPLUS_TOKEN = os.environ.get("PUSHPLUS_TOKEN") # PUSHPLUS推送
+print(f"这是pushplus：{PUSHPLUS_TOKEN}")
 
 HOME_URL = "https://linux.do/"
 LOGIN_URL = "https://linux.do/login"
