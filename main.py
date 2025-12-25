@@ -338,23 +338,23 @@ class LinuxDoBrowser:
                         logger.info(f"将在 {sleep_time} 秒后重试...")
                         time.sleep(sleep_time)
 
-        if PUSHPLUS_TOKEN:
-            try:
-                response = requests.post(
-                    "http://www.pushplus.plus/send",
-                    json={
-                        "token": PUSHPLUS_TOKEN,
-                        "title": "LINUX DO",
-                        "content": status_msg,
-                        "template": "markdown",
-                    },
-                    timeout=10,
-                    headers={"Content-Type": "application/json"},
-                )
-                response.raise_for_status()
-                logger.success("消息已推送至PushPlus")
-            except Exception as e:
-                logger.error(f"PushPlus推送失败: {str(e)}")
+        # if PUSHPLUS_TOKEN:
+        #     try:
+        #         response = requests.post(
+        #             "http://www.pushplus.plus/send",
+        #             json={
+        #                 "token": PUSHPLUS_TOKEN,
+        #                 "title": "LINUX DO",
+        #                 "content": status_msg,
+        #                 "template": "markdown",
+        #             },
+        #             timeout=10,
+        #             headers={"Content-Type": "application/json"},
+        #         )
+        #         response.raise_for_status()
+        #         logger.success("消息已推送至PushPlus")
+        #     except Exception as e:
+        #         logger.error(f"PushPlus推送失败: {str(e)}")
 
 if __name__ == "__main__":
     if not USERNAME or not PASSWORD:
