@@ -106,6 +106,8 @@ class LinuxDoBrowser:
             "Referer": LOGIN_URL,
         }
         resp_csrf = self.session.get(CSRF_URL, headers=headers, impersonate="chrome136")
+        print(f"这是状态码{resp_csrf.status_code}")
+        print(f"这是文本{resp_csrf.text}")
         csrf_data = resp_csrf.json()
         csrf_token = csrf_data.get("csrf")
         logger.info(f"CSRF Token obtained: {csrf_token[:10]}...")
